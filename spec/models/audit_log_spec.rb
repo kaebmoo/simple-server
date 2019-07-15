@@ -66,6 +66,8 @@ describe AuditLog, type: :model do
     end
 
     it 'creates audit logs for user and records when the job is completed' do
+      p AuditLog.count
+      
       perform_enqueued_jobs do
         AuditLog.create_logs_async(user, records, action)
       end
