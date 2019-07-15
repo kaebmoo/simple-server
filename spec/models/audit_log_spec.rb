@@ -56,18 +56,12 @@ describe AuditLog, type: :model do
     let(:action) { 'fetch' }
 
     it 'schedules a job to create audit logs in the background' do
-      p AuditLog.count
-
       assert_enqueued_jobs 1, only: CreateAuditLogsJob do
         AuditLog.create_logs_async(user, records, action)
       end
-
-      p AuditLog.count
     end
 
     it 'creates audit logs for user and records when the job is completed' do
-      p AuditLog.count
-      
       perform_enqueued_jobs do
         AuditLog.create_logs_async(user, records, action)
       end
