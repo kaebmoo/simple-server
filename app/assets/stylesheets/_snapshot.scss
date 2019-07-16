@@ -97,7 +97,7 @@ Snapshot UI
 
 .snapshot-didntattend { color: $grey-dark; }
 .snapshot-uncontrolled { color: $red-dark; }
-.snapshot-controlled { color: $green-dark; }
+.snapshot-controlled { color: $green; }
 
 .snapshot-table {
     margin-bottom: -8px;
@@ -123,4 +123,8 @@ Snapshot UI
     font-size: 75%;
     position: relative;
     top: -1px;
+}
+
+.snapshot .green {
+    color: $green;
 }
