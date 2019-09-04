@@ -56,7 +56,12 @@
   </nav>
 </div>
 
-
+<div class="input-group mb-4 mt-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+  </div>
+    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+</div>
 
 
 <% @admins.each do |admin| %>
@@ -64,9 +69,13 @@
         <div class="row">
             <div class="col col-md-6">
                 <h5>
-                    <%= link_to admin.email, admin %>
+                    <a href="#">Dr Govind Joshi</a>
                 </h5>
-                <div class="mt-2"><i class="fas fa-shield-alt light mr-2"></i> <%= admin.role.humanize %></div>
+                <div class="mt-2"><i class="far fa-envelope light mr-2"></i> drgovindjoshi@resolvetosavelives.org</div>
+                <div class="mt-2"><i class="fas fa-phone light mr-2"></i> +91-555-444-3333</div>
+                <div class="mt-2"><i class="fas fa-map-marker-alt light mr-2"></i> Bathinda, Punjab</div>
+                <div class="mt-2"><i class="far fa-sticky-note light mr-2"></i> STS working with Dr Bidisha</div>
+                <div class="mt-2"><i class="fas fa-hospital light mr-2"></i> <strong>ICHI, PATH:</strong> District: Bathinda, PHC Obvious, PHC Otherplace</div>
             </div>
             <div class="col-md-6 text-right">
                 <% if admin.invited_to_sign_up? %>

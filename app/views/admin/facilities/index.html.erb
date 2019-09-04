@@ -10,6 +10,13 @@
   </div>
 <% end %>
 
+<div class="input-group mb-4 mt-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+  </div>
+    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+</div>
+
 <% @organizations.order(:name).each do |organization| %>
   <% if @organizations.size > 1 %><h2 class="mt-5"><%= organization.name %></h2><% end %>
 
