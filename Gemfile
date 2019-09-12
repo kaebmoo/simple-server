@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.6.2'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 2.0', platforms: [:mri, :mingw, :x64_mingw]
+gem 'activerecord-jdbcpostgresql-adapter',  '~> 51.0', platforms: [:jruby]
 gem 'passenger'
 gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
