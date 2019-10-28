@@ -20,7 +20,7 @@
             <th class="row-label"><strong>Registered patients</strong></th>
             <th class="row-label" colspan="3"><strong>Follow-up patients</strong></th>
             <th class="row-label" colspan="3"><strong>New registrations</strong></th>
-            <th class="row-label" colspan="3"><strong>Patients called</strong></th>
+            <th class="row-label" colspan="3"><strong>Cohort (Jul 1–Aug 31)</strong></th>
           </tr>
 
           <tr data-sort-method="thead">
@@ -38,10 +38,11 @@
               <th class="row-label sort-label" style="padding: 8px 4px;" data-sort-method="number"><%= format_period(@period, period) %></th>
             <% end %>
 
-            <!--Calls made -->
-            <% dates_for_periods(@period, 3).each do |period| %>
-              <th class="row-label sort-label" style="padding: 8px 4px;" data-sort-method="number"><%= format_period(@period, period) %></th>
-            <% end %>
+            <!--Last cohort -->
+            <th class="row-label sort-label" style="padding: 8px 4px; text-transform: none;" data-sort-method="number">Didn't attend</th>
+            <th class="row-label sort-label" style="padding: 8px 4px; text-transform: none;" data-sort-method="number">Uncontrolled</th>
+            <th class="row-label sort-label" style="padding: 8px 4px; text-transform: none;" data-sort-method="number">Controlled</th>
+            
           </tr>
 
           </thead>
@@ -69,12 +70,10 @@
               </td>
             <% end %>
 
-            <!--Calls made -->
-            <% dates_for_periods(@period, 3).each do |period| %>
-              <td class="row-total" style="text-align: center;">
-                <%= analytics_totals(dashboard_analytics, :total_calls_made_by_period, period) %>
+            <!--Last cohort -->
+              <td class="row-total" style="text-align: center;" colspan="3">
+                &nbsp;
               </td>
-            <% end %>
           </tr>
 
           <% policy_scope(row_resource).each do |resource| %>
@@ -108,12 +107,18 @@
                   </td>
                 <% end %>
 
-                <!--Calls made -->
-                <% dates_for_periods(@period, 3).each do |period| %>
-                  <td style="text-align: center;">
-                    <%= dash_if_zero(dashboard_analytics.dig(resource.id, :total_calls_made_by_period, period)) %>
-                  </td>
-                <% end %>
+                <!--Last cohort -->
+                <td colspan="3" style="padding-top: 2px; padding-bottom: 0;">
+                    <table class="split-bars split-bars-compact" style="margin: 0;">
+                        <tbody>
+                            <tr>
+                                <td class="bar bar-1" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 96%;" data-original-title="96% didn't attend">25</td>
+                                <td class="bar bar-2" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 4%;" data-original-title="4% visited and uncontrolled">1</td>
+                                <td class="bar bar-3" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 0%;" data-original-title="0% visited and controlled">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
               </tr>
             <% end %>
           <% end %>
