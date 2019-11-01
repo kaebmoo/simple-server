@@ -1,3 +1,18 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">No ranking</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Best follow-up rate</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Best new registrations</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Best BP control %</a>
+  </li>
+</ul>
+
 <div class="card pr-0 pr-md-3">
     <div class="dropdown">
         <h3 class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: #fff;">
@@ -5,9 +20,9 @@
         </h3>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">All facilities</a>
-            <a class="dropdown-item" href="#">Community facilities (e.g. HWCs)</a>
-            <a class="dropdown-item" href="#">Small facilities (e.g. PHCs and RHs)</a>
-            <a class="dropdown-item" href="#">Large facilities (e.g. CHCs, DHs, and CHs)</a>
+            <a class="dropdown-item" href="#">Community facilities (e.g. HWCs)</a> <!-- 'HWC' 'SAD'   -->
+            <a class="dropdown-item" href="#">Small facilities (e.g. PHCs and RHs)</a> <!-- 'MPHC' 'PHC' 'RH' 'SAD' 'Standalone' `UHC` -->
+            <a class="dropdown-item" href="#">Large facilities (e.g. CHCs, DHs, and CHs)</a> <!-- 'CH' 'CHC' 'DH' 'Hospital' 'SDH' --> 
         </div>
     </div>
     
@@ -29,10 +44,10 @@
           <thead>
           <tr>
             <th>&nbsp;</th>
-            <th class="row-label"><strong>Registered patients</strong></th>
+            <th class="row-label"><strong>Registered</strong></th>
             <th class="row-label" colspan="3"><strong>Follow-up patients</strong></th>
             <th class="row-label" colspan="3"><strong>New registrations</strong></th>
-            <th class="row-label" colspan="3"><strong>Last cohort: Jul 1–Aug 31</strong></th>
+            <th class="row-label" colspan="3"><strong>Monthly cohort (registered in July)</strong></th>
           </tr>
 
           <tr data-sort-method="thead">
@@ -124,9 +139,9 @@
                     <table class="split-bars split-bars-compact" style="margin: 0;">
                         <tbody>
                             <tr>
-                                <td class="bar bar-1" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 96%;" data-original-title="96% didn't attend">25</td>
-                                <td class="bar bar-2" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 4%;" data-original-title="4% visited and uncontrolled">1</td>
-                                <td class="bar bar-3" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: 0%;" data-original-title="0% visited and controlled">0</td>
+                                <td class="bar bar-1" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: <%= rand(40..60) %>%;" data-original-title="96% didn't attend"><%= rand(70..140) %></td>
+                                <td class="bar bar-2" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: <%= rand(5..30) %>;" data-original-title="4% visited and uncontrolled"><%= rand(10..45) %></td>
+                                <td class="bar bar-3" data-toggle="tooltip" data-placement="top" data-trigger="hover focus click" title="" style="width: auto;" data-original-title="0% visited and controlled"><%= rand(5..30) %></td>
                             </tr>
                         </tbody>
                     </table>
