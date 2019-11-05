@@ -7,6 +7,11 @@ class Analytics::DistrictsController < AnalyticsController
   def show
     set_cohort_analytics(@period, @prev_periods)
     set_dashboard_analytics(@period, 3)
+
+    respond_to do |format|
+      format.csv
+      format.html
+    end
   end
 
   def share_anonymized_data
