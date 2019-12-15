@@ -8,10 +8,10 @@ class SmsNotificationService
   end
 
   def send_request_otp_sms(otp)
-    app_signature = ENV['SIMPLE_APP_SIGNATURE']
-    send_sms(I18n.t('sms.request_otp',
-                    otp: otp,
-                    app_signature: app_signature))
+    #app_signature = ENV['SIMPLE_APP_SIGNATURE']
+    #send_sms(I18n.t('sms.request_otp',
+    #                otp: otp,
+    #                app_signature: app_signature))
   end
 
   def send_reminder_sms(reminder_type, appointment, callback_url, locale = DEFAULT_LOCALE)

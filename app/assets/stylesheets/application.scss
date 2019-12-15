@@ -33,7 +33,9 @@ $font-small: 11px;
 
 // Third-party imports
 @import "bootstrap";
-@import "tablesort/tablesort";
+// @import "tablesort/sorts";
+@import "./tablesort";
+// @import "./tablesort.min.js";
 
 // Local imports
 @import "dashboard";

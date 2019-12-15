@@ -11,11 +11,19 @@ development:
   <<: *default
   host: localhost
   database: simple-server_development
+  username: postgres
+  password: simple
 
 test:
   <<: *default
   host: localhost
   database: simple-server_test<%= ENV['TEST_ENV_NUMBER'] %>
+  username: postgres
+  password: simple
 
 production:
   <<: *default
+  host: localhost
+  database: simple-server
+  username: postgres
+  password: simple

@@ -453,6 +453,7 @@ DEPENDENCIES
   devise_invitable (~> 1.7.0)
   discard (~> 1.0)
   dotenv-rails
+  execjs
   factory_bot_rails
   faker
   fakeredis

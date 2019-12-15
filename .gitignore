@@ -22,3 +22,5 @@
 coverage
 .env
 .env.production
+/config/certs/*
+!/config/certs/.keep

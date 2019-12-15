@@ -48,6 +48,8 @@ gem 'factory_bot_rails', require: false
 gem 'faker', require: false
 gem 'timecop', '~> 0.9.0', require: false
 gem 'http_accept_language'
+gem 'execjs'
+# gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

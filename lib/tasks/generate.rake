@@ -301,7 +301,7 @@ namespace :generate do
               { name: "PHC Girvi", district: "Satara", state: "Maharashtra" },
               { name: "SDH Indoli", district: "Satara", state: "Maharashtra" }
             ]
-          },
+          }
         ]
       },
       {
@@ -346,7 +346,7 @@ namespace :generate do
     facilities.each do |f|
       config.dig('users', 'count').times do
         FactoryBot.create(:user,
-                          organization_id: organization.id,
+                          #organization_id: organization.id,
                           registration_facility: f,
                           created_at: creation_date,
                           updated_at: creation_date)
@@ -361,7 +361,7 @@ namespace :generate do
 
   def create_sync_requested_users(organization, facility, creation_date)
     user = FactoryBot.create(:user,
-                             organization_id: organization.id,
+                             #organization_id: organization.id,
                              registration_facility: facility,
                              created_at: creation_date,
                              updated_at: creation_date)
@@ -373,7 +373,7 @@ namespace :generate do
 
   def create_sync_denied_users(organization, facility, creation_date)
     user = FactoryBot.create(:user,
-                             organization_id: organization.id,
+                             #organization_id: organization.id,
                              registration_facility: facility,
                              created_at: creation_date,
                              updated_at: creation_date)
@@ -390,7 +390,7 @@ namespace :generate do
                                        updated_at: creation_date)
 
       create_facility_groups(organization, dev_org[:facility_groups], creation_date, config)
-      create_admins(organization)
+      #create_admins(organization)
     end
 
     Rails.logger.info("Created organizations for date #{creation_date}")

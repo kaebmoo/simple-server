@@ -30,11 +30,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'simple.ogonan.com', port: 3000 }
 
   # Use Mailcatcher to test mail in development
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = { :address => "simple.ogonan.com", :port => 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -58,4 +58,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_job.queue_adapter = :inline
+
+  # https://solidfoundationwebdev.com/blog/posts/cannot-render-console-from-some-ip-with-rails
+  config.web_console.whiny_requests = false
 end
